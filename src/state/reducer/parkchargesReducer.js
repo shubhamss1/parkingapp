@@ -1,5 +1,5 @@
 export const parkchargesReducer = (
-  state = { parkcharges: 7, model: "BMW" },
+  state = { parkcharges: 7, model: "BMW", parklayout: { cols: 0, rows: 0 } },
   action
 ) => {
   switch (action.type) {
@@ -12,6 +12,11 @@ export const parkchargesReducer = (
       return {
         ...state,
         model: action.payload,
+      };
+    case "parklayout":
+      return {
+        ...state,
+        parklayout: action.payload,
       };
     default:
       return state;
