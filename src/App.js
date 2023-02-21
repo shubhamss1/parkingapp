@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Profiler } from "react";
+import { Provider } from "react-redux";
+import { Card, CardContent } from "@mui/material";
+import { Landing } from "./components/Landing";
+import { configStore } from "./state/configStore";
 
 function App() {
+  const currStore = configStore();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={currStore}>
+      <Card>
+        <CardContent>
+          <Landing />
+        </CardContent>
+      </Card>
+    </Provider>
   );
 }
 
