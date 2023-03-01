@@ -46,6 +46,7 @@ export const ParkingBayList = () => {
       dispatch(action);
     }
   }, []);
+
   return (
     <Grid container spacing={2} align="center">
       <Grid item xs={4}>
