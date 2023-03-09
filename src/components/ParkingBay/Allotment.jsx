@@ -15,9 +15,10 @@ export const Allotment = () => {
   const [vehicleNo, setVehicleNo] = useState(0);
 
   const handleSubmit = () => {
-    const newPark = { ...park, model, vehicleNo, isAllocate: true };
+    const startdt = new Date();
+    const newPark = { ...park, model, vehicleNo, isAllocate: true, startdt };
     selAllocate[selIndex] = newPark;
-
+    
     const type = "allocate";
     const payload = selAllocate;
     const action = { type, payload };
